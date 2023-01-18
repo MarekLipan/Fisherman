@@ -1,0 +1,10 @@
+path:  "data"
+train: "train"
+val: "val"
+
+#Classes
+nc: 1
+
+#classes names
+#replace all class names list with your classes names
+names: ['B']
