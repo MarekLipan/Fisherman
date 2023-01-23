@@ -2,7 +2,7 @@ task: detect
 mode: train
 model: yolov8n.yaml
 data: custom.yaml
-epochs: 10
+epochs: 30
 patience: 50
 batch: 16
 imgsz: 640
@@ -33,7 +33,7 @@ save_hybrid: false
 conf: 0.001
 iou: 0.7
 max_det: 300
-half: true
+half: false
 dnn: false
 plots: true
 source: ultralytics/assets/
@@ -49,6 +49,7 @@ visualize: false
 augment: false
 agnostic_nms: false
 retina_masks: false
+classes: null
 format: torchscript
 keras: false
 optimize: false
@@ -85,9 +86,5 @@ mosaic: 1.0
 mixup: 0.0
 copy_paste: 0.0
 cfg: null
-hydra:
-  output_subdir: null
-  run:
-    dir: .
-v5loader: true
+v5loader: false
 save_dir: C:\Users\marek\Desktop\Projects\Fisherman\runs\detect\train

@@ -1,7 +1,6 @@
 from ultralytics import YOLO
 import os
-#import torch 
-#print(torch.cuda.is_available())
+import torch 
 
 os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
@@ -11,4 +10,4 @@ os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 model = YOLO("yolov8n.pt")  # load a pretrained model (recommended for training)
 
 if __name__ == "__main__":
-    model.train(data="custom.yaml", epochs=10)  # train the model
+    model.train(data="custom.yaml", epochs=30)  # train the model
