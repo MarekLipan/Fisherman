@@ -17,9 +17,16 @@ def predict():
     image = cv2.imdecode(np.frombuffer(image, np.uint8), cv2.IMREAD_COLOR)
 
     # Make predictions using the model
-    prediction = model(image)[0].boxes.data.tolist()[0][:4]
+    prediction = model(image)[0].boxes.data.tolist()
 
-    return jsonify(prediction)
+    # Needs to find exactly 1 blob
+    if len(prediction) != 1:
+        result = []
+    else:
+        result = prediction[0][:4]
+        
+        
+    return jsonify(result)
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
